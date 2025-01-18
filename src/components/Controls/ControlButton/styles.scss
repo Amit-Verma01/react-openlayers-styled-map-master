@@ -1,0 +1,197 @@
+@import 'src/Theme/variables';
+
+.control {
+  position: relative;
+  right: 0;
+  background-color: transparent;
+}
+
+.control.styled {
+  & + div {
+    margin-top: 5px;
+  }
+  &.hasBadge {
+    margin-bottom: 10px;
+    @media (max-width: 960px) {
+      margin-bottom: 20px;
+    }
+  }
+  outline: none;
+  button {
+    outline: none;
+  }
+}
+
+.btn {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  min-width: 30px;
+  min-height: 30px;
+  border: none;
+  cursor: pointer;
+  margin: 0px;
+  padding: 0px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  transition: all 200ms ease-in-out;
+}
+
+.iconDiv {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+
+  svg {
+    display: inline-block;
+  }
+}
+
+.drawer {
+  max-width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  transition: all 200ms ease-in-out;
+  border-radius: 15px;
+}
+
+.drawerLeft {
+  max-width: 0px;
+  height: 30px;
+  transition: all 200ms ease-in-out;
+  overflow: hidden;
+  font-size: 12px;
+  opacity: 0;
+  width: max-content;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.activeLabel {
+  height: 30px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: nowrap;
+  line-height: 9px;
+  font-size: 11px;
+  text-align: center;
+  padding: 2px 5px;
+}
+
+.activeLabelText {
+  font-weight: normal;
+}
+
+.activeLabelTitle {
+  font-weight: bold;
+}
+
+.toolTipText {
+  position: absolute;
+  max-width: 0px;
+  width: max-content;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 3px;
+  height: 24px;
+  right: 35px;
+  color: #000;
+  background: linear-gradient(77deg, rgba(#fff, 0.66), rgba(#fff, 1));
+  overflow: hidden;
+  transition: all 200ms ease-in-out;
+  opacity: 0;
+  border-radius: 5px;
+  font-size: 12px;
+  line-height: 12px;
+  box-sizing: border-box;
+  padding: 2px 5px;
+  font-weight: bold;
+}
+
+.control:not(.active) {
+  .btn:hover {
+    .toolTipText {
+      opacity: 1;
+      max-width: 160px;
+      white-space: normal;
+    }
+  }
+}
+
+.control.active {
+  .btn {
+    background-color: $controlActiveColor;
+  }
+
+  .drawer {
+    max-width: 200px;
+    background-color: $controlActiveColor;
+  }
+  .drawerLeft {
+    max-width: 200px;
+    height: 30px;
+    opacity: 1;
+  }
+}
+
+.badgeButton {
+  position: absolute;
+  bottom: -12px;
+  right: -5px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0px;
+  cursor: pointer;
+
+  @media (max-width: 960px) {
+    bottom: -20px;
+    width: 25px;
+    height: 25px;
+  }
+
+  &:hover {
+    .badgeButtonTooltip {
+      opacity: 1;
+      max-width: 160px;
+      white-space: normal;
+      padding: 2px 5px;
+    }
+  }
+}
+
+.badgeButtonTooltip {
+  position: absolute;
+  top: auto;
+  bottom: auto;
+  right: 30px;
+  width: max-content;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(77deg, rgba(#fff, 0.66), rgba(#fff, 1));
+  border-radius: 5px;
+  font-size: 12px;
+  line-height: 12px;
+  transition: all 200ms ease-in-out;
+  max-width: 0px;
+  overflow: hidden;
+  opacity: 0;
+  white-space: nowrap;
+  box-sizing: border-box;
+}
