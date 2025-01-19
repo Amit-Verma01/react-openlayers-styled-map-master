@@ -2,9 +2,6 @@
 
 > Openlayers map component wrapped in react component with style and global hooks
 
-[![NPM](https://img.shields.io/npm/v/react-openlayers-styled-map.svg)](https://www.npmjs.com/package/react-openlayers-styled-map) [![TypeScript Style Guide](https://img.shields.io/badge/code_style-typecript-brightgreen.svg)](https://www.typescriptlang.org/)
-![NPM](https://img.shields.io/npm/l/react-openlayers-styled-map)
-
 
 This (react-openlayers-styled-map) is a React.JS component made in Typescript.
 It acts as a wrapper around [OpenLayers](https://openlayers.org/) map object and tries to supress the complexity of a starting map project.
